@@ -1,5 +1,6 @@
 from unittest.mock import Mock
 from lib.order import *
+from datetime import datetime
 
 def test_order_basket_initialised():
     takeaway = Mock()
@@ -23,3 +24,9 @@ def test_get_total_order_price():
     takeaway.place_order.return_value = Order(basket, 2.99)
     order = takeaway.place_order()
     assert order.get_total_price() == 33.97
+
+def test_get_predicted_delivery_time():
+    basket = Mock()
+    order = Order(basket, 2.99)
+    order.order_time = datetime(2025, 12, 31, 17, 55)
+    assert order.get_predicted_delivery_time() == datetime(2025, 12, 31, 18, 25)

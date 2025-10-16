@@ -1,8 +1,10 @@
+
+
 class Texter:
-    def __init__(self):
-        #order: order object
-        pass
+    def __init__(self, order, text_sender):
+        self.order = order
+        self.text_sender = text_sender
     def send(self):
-        # side-effects
-        #   sends text e.g. "Thank you! Your order was placed and will be delivered before 18:52"
-        pass
+        delivery_time = self.order.get_predicted_delivery_time().time().strftime("%H:%M")
+        message = f"Thank you! Your order was placed and will be delivered before {delivery_time}"
+        return message

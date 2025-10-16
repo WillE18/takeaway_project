@@ -1,3 +1,6 @@
+from datetime import datetime, timedelta
+
+
 class Order:
     def __init__(self, basket, delivery_fee):
         self.basket = basket
@@ -8,5 +11,7 @@ class Order:
         pass
     def _generate_order_number(self):
         pass
+    def get_predicted_delivery_time(self):
+        return self.order_time + timedelta(minutes=30)
     def get_total_price(self):
         return sum([dish.price for dish in self.basket.all_dishes()]) + self.delivery_fee
