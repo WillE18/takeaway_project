@@ -1,8 +1,10 @@
 class ReceiptGenerator:
-    def __init__(self):
-        # order: order object
-        pass
+    def __init__(self, order):
+        self.order = order
     def receiptify(self):
-        # returns:
-        #   a dict with the following keys: {time_of_order, order_number, dishes, total_price}
-        pass
+        return {
+            "time_of_order": self.order.order_time,
+            "order_number": self.order.order_number,
+            "dishes": self.order.basket.all_dishes(),
+            "total_price": self.order.get_total_price()
+        }

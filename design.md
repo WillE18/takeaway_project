@@ -27,16 +27,16 @@ I would like to receive a text such as "Thank you! Your order was placed and wil
 class Takeaway:
     def __init__(self, name):
         # name: string
-        # available_dishes: []
+        # menu: []
         # order_history: []
     def place_order(self, basket):
         # parameters:
         #   basket: []
         # returns:
         #   order object
-    def view_dishes(self):
+    def view_menu(self):
         # returns:
-        #   array of available_dishes
+        #   array of menu
     def get_dish(dish_id):
         # returns:
         #   gets dish object according to its id

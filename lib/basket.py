@@ -5,5 +5,5 @@ class Basket:
         self._dishes.append(dish)
     def remove(self, dish):
         self._dishes.remove(dish)
-    def view_all(self):
+    def all_dishes(self):
         return self._dishes

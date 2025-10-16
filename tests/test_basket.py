@@ -3,13 +3,13 @@ from lib.basket import *
 
 def test_empty_basket_initialised():
     basket = Basket()
-    assert basket.view_all() == []
+    assert basket.all_dishes() == []
 
 def test_add_dish_to_basket():
     dish = Mock()
     basket = Basket()
     basket.add(dish)
-    assert basket.view_all() == [dish]
+    assert basket.all_dishes() == [dish]
 
 def test_add_multiple_dishes_then_remove_dish():
     dish1 = Mock()
@@ -18,4 +18,4 @@ def test_add_multiple_dishes_then_remove_dish():
     basket.add(dish1)
     basket.add(dish2)
     basket.remove(dish1)
-    assert basket.view_all() == [dish2]
+    assert basket.all_dishes() == [dish2]

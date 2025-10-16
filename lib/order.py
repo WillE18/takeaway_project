@@ -9,4 +9,4 @@ class Order:
     def _generate_order_number(self):
         pass
     def get_total_price(self):
-        return sum([dish.price for dish in self.basket.view_all()]) + self.delivery_fee
+        return sum([dish.price for dish in self.basket.all_dishes()]) + self.delivery_fee
